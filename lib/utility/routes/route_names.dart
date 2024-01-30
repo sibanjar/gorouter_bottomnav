@@ -1,6 +1,7 @@
 class RoutePathConstants {
   // view
   static const String home = 'home';
+  static const String blog = 'blog';
   static const String blogpage = 'blogpage';
   static const String faq = 'faq';
   static const String favpage = 'favpage';

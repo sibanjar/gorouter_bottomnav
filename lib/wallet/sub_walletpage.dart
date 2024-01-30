@@ -14,7 +14,7 @@ class SubWalletPage extends StatelessWidget {
             onPressed: (){
               context.pop();
             },
-            child: const Text('Go to wallet'),
+            child: const Text('Back'),
           ),
         )
     );

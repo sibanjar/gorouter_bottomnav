@@ -14,10 +14,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int selectedIndex = 0;
 
   void _goToBranch(int index){
-    widget.navigationShell.goBranch(
-        index,
-    initialLocation: index == widget.navigationShell.currentIndex,
-    );
+    widget.navigationShell.goBranch(index,
+    initialLocation: index == widget.navigationShell.currentIndex);
   }
 
   @override
