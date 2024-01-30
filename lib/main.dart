@@ -17,6 +17,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: router.returnRouter(false),
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.grey[800], // Adjust the shade of grey as needed
+        hintColor: Colors.grey[600], // Adjust the shade of grey as needed
+      ),
     );
 
   }

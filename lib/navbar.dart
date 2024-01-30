@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
 
 class BottomNavBar extends StatefulWidget {
   final StatefulNavigationShell navigationShell;
-  const BottomNavBar({super.key, required this.navigationShell});
+  const BottomNavBar({Key? key, required this.navigationShell}) : super(key: key);
 
   @override
   State<BottomNavBar> createState() => _BottomNavBarState();
@@ -13,47 +12,46 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   int selectedIndex = 0;
 
-  void _goToBranch(int index){
-    widget.navigationShell.goBranch(index,
-    initialLocation: index == widget.navigationShell.currentIndex);
+  void _goToBranch(int index) {
+    widget.navigationShell.goBranch(index, initialLocation: index == widget.navigationShell.currentIndex);
   }
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Container(
-          child: widget.navigationShell),
-      bottomNavigationBar: SlidingClippedNavBar(
+        child: widget.navigationShell,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
-        onButtonPressed: (index) {
+        selectedItemColor: const Color(0xFF01579B),
+        unselectedItemColor: Colors.grey,
+        currentIndex: selectedIndex,
+        onTap: (index) {
           setState(() {
             selectedIndex = index;
           });
           _goToBranch(selectedIndex);
         },
-        iconSize: 30,
-        activeColor: Color(0xFF01579B),
-        selectedIndex: selectedIndex,
-        barItems: [
-          BarItem(
-            icon: Icons.event,
-            title: 'Home',
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
           ),
-          BarItem(
-            icon: Icons.favorite_border,
-            title: 'Favourite',
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite_border),
+            label: 'Favourite',
           ),
-          BarItem(
-            icon: Icons.search_rounded,
-            title: 'Search',
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search_rounded),
+            label: 'Search',
           ),
-          BarItem(
-            icon: Icons.file_open_sharp,
-            title: 'Blog',
+          BottomNavigationBarItem(
+            icon: Icon(Icons.book_online_outlined),
+            label: 'Blog',
           ),
         ],
       ),
-
     );
   }
 }

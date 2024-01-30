@@ -23,13 +23,13 @@ class _HomePageState extends State<HomePage> {
           children: [
           ElevatedButton(
               onPressed: (){
-                context.goNamed(RoutePathConstants.setting);
+                context.goNamed(RoutePathConstants.home1);
               },
           child: const Text('Home1'),
           ),
             ElevatedButton(
               onPressed: (){
-                context.goNamed(RoutePathConstants.wallet);
+                context.goNamed(RoutePathConstants.home2);
               },
           child: const Text('Home2'),
           ),

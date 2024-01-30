@@ -3,20 +3,23 @@ import 'package:go_router/go_router.dart';
 
 import '../utility/routes/route_names.dart';
 
-class FaqPage extends StatelessWidget {
-  const FaqPage({super.key});
+class SearchPage extends StatelessWidget {
+  const SearchPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home page'),),
+      appBar: AppBar(title: const Text('Search page'),),
       body: Center(child: Column(
         children: [
           ElevatedButton(
             onPressed: ()=>context.pushNamed(RoutePathConstants.wallet),
-            child: const Text('Wallet'),
+            child: const Text('pushWallet'),
           ),
-          const Text('Faq'),
+          ElevatedButton(
+            onPressed: ()=>context.goNamed(RoutePathConstants.wallet),
+            child: const Text('goWallet'),
+          ),
         ],
       )),
     );
