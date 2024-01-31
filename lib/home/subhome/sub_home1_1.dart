@@ -14,7 +14,7 @@ class HomePageChild1 extends StatelessWidget {
         children: [
           ElevatedButton(
             onPressed: (){
-              context.goNamed(RoutePathConstants.thirdfavpage);
+              context.pushNamed(RoutePathConstants.thirdfavpage);
             },
             child: const Text('third fav page'),
           ),

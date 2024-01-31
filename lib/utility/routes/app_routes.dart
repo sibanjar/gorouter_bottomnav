@@ -1,4 +1,3 @@
-
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 import 'package:gorouter_bottomnav/blog_page.dart';
@@ -23,8 +22,7 @@ import '../../settings/setting.dart';
 class AppRouter{
   final GlobalKey<NavigatorState> _rootNavigatorKey =  GlobalKey<NavigatorState>();
   // final GlobalKey<NavigatorState> _homeNavigatorKey =  GlobalKey<NavigatorState>(debugLabel: 'shellHome');
-  // final GlobalKey<NavigatorState> _faqNavigatorKey =  GlobalKey<NavigatorState>(debugLabel: 'shellFaq');
-  // final GlobalKey<NavigatorState> _favNavigatorKey =  GlobalKey<NavigatorState>(debugLabel: 'shellFav');
+  final GlobalKey<NavigatorState> _favNavigatorKey =  GlobalKey<NavigatorState>(debugLabel: 'shellFav');
   // final GlobalKey<NavigatorState> _blogNavigatorKey =  GlobalKey<NavigatorState>(debugLabel: 'shellBlog');
 
   GoRouter returnRouter(bool isAuth){
@@ -86,30 +84,7 @@ class AppRouter{
                             ),
                           ]
                         ),
-                        GoRoute(
-                          parentNavigatorKey: _rootNavigatorKey,
-                          path: 'setting',
-                          name: RoutePathConstants.setting,
-                          builder: (BuildContext context, GoRouterState state) {
-                            return SettingPage();
-                          },
-                          routes: [
-                            GoRoute(
-                              // parentNavigatorKey: _rootNavigatorKey,
-                                path: 'chart',
-                                name: RoutePathConstants.chart,
-                                builder: (context,state){
-                                return const ChartSetting();
-                            }),
-                            GoRoute(
-                              parentNavigatorKey: _rootNavigatorKey,
-                                path: 'notification',
-                                name: RoutePathConstants.notification,
-                                builder: (context,state){
-                                return const NotificationSetting();
-                            }),
-                          ]
-                        ),
+
                         GoRoute(
                           parentNavigatorKey: _rootNavigatorKey,
                           path: 'wallet',
@@ -123,10 +98,10 @@ class AppRouter{
                   ),
                 ]),
             StatefulShellBranch(
-              // navigatorKey:_favNavigatorKey,
+              navigatorKey:_favNavigatorKey,
                 routes: [
                   GoRoute(
-                    path: '/favpage', // horoscope.
+                    path: '/favpage',
                     name: RoutePathConstants.favpage,
                     builder: (BuildContext context, GoRouterState state) {
                       return const FavouritePage();
@@ -160,7 +135,6 @@ class AppRouter{
                   ),
                 ]),
             StatefulShellBranch(
-              // navigatorKey:_faqNavigatorKey,
                 routes: [
                   GoRoute(
                     path: '/search',
@@ -191,6 +165,34 @@ class AppRouter{
                       ),
                     ]
                   ),
+                ]),
+            StatefulShellBranch(
+                routes: [
+                  GoRoute(
+                      // parentNavigatorKey: _rootNavigatorKey,
+                      path: '/setting',
+                      name: RoutePathConstants.setting,
+                      builder: (BuildContext context, GoRouterState state) {
+                        return const SettingPage();
+                      },
+                      routes: [
+                        GoRoute(
+                          // parentNavigatorKey: _rootNavigatorKey,
+                            path: 'chart',
+                            name: RoutePathConstants.chart,
+                            builder: (context,state){
+                              return const ChartSetting();
+                            }),
+                        GoRoute(
+                          parentNavigatorKey: _rootNavigatorKey,
+                            path: 'notification',
+                            name: RoutePathConstants.notification,
+                            builder: (context,state){
+                              return const NotificationSetting();
+                            }),
+                      ]
+                  ),
+
                 ]),
 
 

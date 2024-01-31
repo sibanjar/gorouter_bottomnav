@@ -14,13 +14,13 @@ class HomePage1 extends StatelessWidget {
         children: [
           ElevatedButton(
             onPressed: (){
-              context.goNamed(RoutePathConstants.home11);
+              context.pushNamed(RoutePathConstants.home11);
             },
             child: const Text('Home1-1'),
           ),
           ElevatedButton(
             onPressed: (){
-              context.goNamed(RoutePathConstants.home12);
+              context.pushNamed(RoutePathConstants.home12);
             },
             child: const Text('Home1-2'),
           ),

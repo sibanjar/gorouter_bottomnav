@@ -14,13 +14,13 @@ class BlogPage extends StatelessWidget {
         children: [
           ElevatedButton(
               onPressed: (){
-                context.goNamed(RoutePathConstants.blogpage);
+                context.pushNamed(RoutePathConstants.blogpage);
               },
               child: Text('Blog in'),
           ),
           ElevatedButton(
             onPressed: (){
-              context.goNamed(RoutePathConstants.setting);
+              context.pushNamed(RoutePathConstants.setting);
             },
             child: Text('Homepage ko setting'),
           ),

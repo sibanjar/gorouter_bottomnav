@@ -14,7 +14,7 @@ class HomePagechild2 extends StatelessWidget {
         children: [
           ElevatedButton(
             onPressed: (){
-              context.goNamed(RoutePathConstants.home1);
+              context.pushNamed(RoutePathConstants.home1);
             },
             child: const Text('go home1'),
           ),

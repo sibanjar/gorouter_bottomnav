@@ -17,12 +17,12 @@ class SearchPage extends StatelessWidget {
             child: const Text('pushWallet'),
           ),
           ElevatedButton(
-            onPressed: ()=>context.goNamed(RoutePathConstants.wallet),
+            onPressed: ()=>context.pushNamed(RoutePathConstants.wallet),
             child: const Text('goWallet'),
           ),
           ElevatedButton(
             onPressed: (){
-              context.goNamed(RoutePathConstants.setting);
+              context.pushNamed(RoutePathConstants.setting);
             },
             child: const Text('setting'),
           ),

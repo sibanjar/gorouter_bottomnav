@@ -16,19 +16,19 @@ class FavouritePage extends StatelessWidget {
               const Text('Favourite'),
               ElevatedButton(
                 onPressed: (){
-                  context.goNamed(RoutePathConstants.secondfavpage);
+                  context.pushNamed(RoutePathConstants.secondfavpage);
                 },
                 child: const Text('second fav'),
               ),
               ElevatedButton(
                 onPressed: (){
-                  context.goNamed(RoutePathConstants.thirdfavpage);
+                  context.pushNamed(RoutePathConstants.thirdfavpage);
                 },
                 child: const Text('third fav'),
               ),
               ElevatedButton(
                 onPressed: (){
-                  context.goNamed(RoutePathConstants.setting);
+                  context.pushNamed(RoutePathConstants.setting);
                 },
                 child: const Text('setting'),
               ),

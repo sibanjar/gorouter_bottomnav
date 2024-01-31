@@ -13,13 +13,13 @@ class SettingPage extends StatelessWidget {
         children: [
           ElevatedButton(
               onPressed:(){
-                context.goNamed(RoutePathConstants.chart);
+                context.pushNamed(RoutePathConstants.chart);
               },
               child:const Text('Chart Settings')
           ),
           ElevatedButton(
               onPressed:(){
-                context.goNamed(RoutePathConstants.notification);
+                context.pushNamed(RoutePathConstants.notification);
               },
               child:const Text('Notification Settings')
           ),

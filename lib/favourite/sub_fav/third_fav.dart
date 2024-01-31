@@ -16,7 +16,7 @@ class ThirdFavouritePage extends StatelessWidget {
               const Text('Third Favourite'),
               ElevatedButton(
                 onPressed: (){
-                  context.goNamed(RoutePathConstants.home1);
+                  context.pushNamed(RoutePathConstants.home1);
                 },
                 child: const Text('Home1'),
               ),
