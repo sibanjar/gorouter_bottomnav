@@ -2,13 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class SubSettings extends StatelessWidget {
-  const SubSettings({super.key});
+class NotificationSetting extends StatelessWidget {
+  const NotificationSetting({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Sub Settings'),),
+      appBar: AppBar(title: Text('Notification Settings'),),
       body: Center(
         child: Container(
           child: ElevatedButton(

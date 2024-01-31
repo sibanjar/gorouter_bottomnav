@@ -16,6 +16,8 @@ import 'package:gorouter_bottomnav/utility/routes/route_names.dart';
 import 'package:gorouter_bottomnav/wallet/wallet_page.dart';
 import '../../home/subhome/sub_home_child/sub_home1_2.dart';
 import '../../home/home_page.dart';
+import '../../settings/chart_settings.dart';
+import '../../settings/notification_settings.dart';
 import '../../settings/setting.dart';
 
 class AppRouter{
@@ -91,6 +93,22 @@ class AppRouter{
                           builder: (BuildContext context, GoRouterState state) {
                             return SettingPage();
                           },
+                          routes: [
+                            GoRoute(
+                              // parentNavigatorKey: _rootNavigatorKey,
+                                path: 'chart',
+                                name: RoutePathConstants.chart,
+                                builder: (context,state){
+                                return const ChartSetting();
+                            }),
+                            GoRoute(
+                              parentNavigatorKey: _rootNavigatorKey,
+                                path: 'notification',
+                                name: RoutePathConstants.notification,
+                                builder: (context,state){
+                                return const NotificationSetting();
+                            }),
+                          ]
                         ),
                         GoRoute(
                           parentNavigatorKey: _rootNavigatorKey,
