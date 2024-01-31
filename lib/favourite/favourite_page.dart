@@ -26,6 +26,12 @@ class FavouritePage extends StatelessWidget {
                 },
                 child: const Text('third fav'),
               ),
+              ElevatedButton(
+                onPressed: (){
+                  context.goNamed(RoutePathConstants.setting);
+                },
+                child: const Text('setting'),
+              ),
             ],
           )),
     );

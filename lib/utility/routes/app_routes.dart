@@ -15,7 +15,7 @@ import 'package:gorouter_bottomnav/search/search_page.dart';
 import 'package:gorouter_bottomnav/utility/routes/route_names.dart';
 import 'package:gorouter_bottomnav/wallet/wallet_page.dart';
 import '../../home/subhome/sub_home_child/sub_home1_2.dart';
-import '../../home_page.dart';
+import '../../home/home_page.dart';
 import '../../settings/setting.dart';
 
 class AppRouter{
@@ -85,6 +85,7 @@ class AppRouter{
                           ]
                         ),
                         GoRoute(
+                          parentNavigatorKey: _rootNavigatorKey,
                           path: 'setting',
                           name: RoutePathConstants.setting,
                           builder: (BuildContext context, GoRouterState state) {

@@ -20,6 +20,12 @@ class SearchPage extends StatelessWidget {
             onPressed: ()=>context.goNamed(RoutePathConstants.wallet),
             child: const Text('goWallet'),
           ),
+          ElevatedButton(
+            onPressed: (){
+              context.goNamed(RoutePathConstants.setting);
+            },
+            child: const Text('setting'),
+          ),
         ],
       )),
     );

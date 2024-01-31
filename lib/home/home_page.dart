@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'utility/routes/route_names.dart';
+import '../utility/routes/route_names.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -33,6 +33,12 @@ class _HomePageState extends State<HomePage> {
               },
           child: const Text('Home2'),
           ),
+            ElevatedButton(
+              onPressed: (){
+                context.goNamed(RoutePathConstants.setting);
+              },
+              child: const Text('setting'),
+            ),
         ]
          ),
     ),
