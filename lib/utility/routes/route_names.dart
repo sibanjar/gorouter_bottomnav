@@ -18,5 +18,6 @@ class RoutePathConstants {
   static const String wallet = 'wallet';
   static const String chart = 'chart';
   static const String notification = 'notification';
+  static const String ask = 'ask';
 
   }

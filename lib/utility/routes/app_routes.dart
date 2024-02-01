@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
+import 'package:gorouter_bottomnav/ask/ask_question.dart';
 import 'package:gorouter_bottomnav/blog_page.dart';
 import 'package:gorouter_bottomnav/favourite/sub_fav/fourth_fav.dart';
 import 'package:gorouter_bottomnav/favourite/sub_fav/second_fav.dart';
@@ -22,7 +23,7 @@ import '../../settings/setting.dart';
 class AppRouter{
   final GlobalKey<NavigatorState> _rootNavigatorKey =  GlobalKey<NavigatorState>();
   // final GlobalKey<NavigatorState> _homeNavigatorKey =  GlobalKey<NavigatorState>(debugLabel: 'shellHome');
-  final GlobalKey<NavigatorState> _favNavigatorKey =  GlobalKey<NavigatorState>(debugLabel: 'shellFav');
+  // final GlobalKey<NavigatorState> _favNavigatorKey =  GlobalKey<NavigatorState>(debugLabel: 'shellFav');
   // final GlobalKey<NavigatorState> _blogNavigatorKey =  GlobalKey<NavigatorState>(debugLabel: 'shellBlog');
 
   GoRouter returnRouter(bool isAuth){
@@ -58,6 +59,15 @@ class AppRouter{
                               builder: (BuildContext context, GoRouterState state) {
                                 return HomePageChild1();
                               },
+                              routes: [
+                                GoRoute(
+                                  path: 'ask',
+                                  name: RoutePathConstants.ask,
+                                  builder: (BuildContext context, GoRouterState state) {
+                                    return AskQuestion();
+                                  },
+                                ),
+                              ]
                             ),
                             GoRoute(
                               path: 'home12',
@@ -98,7 +108,7 @@ class AppRouter{
                   ),
                 ]),
             StatefulShellBranch(
-              navigatorKey:_favNavigatorKey,
+              // navigatorKey:_favNavigatorKey,
                 routes: [
                   GoRoute(
                     path: '/favpage',

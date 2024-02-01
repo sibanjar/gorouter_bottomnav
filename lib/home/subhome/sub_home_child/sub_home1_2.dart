@@ -16,7 +16,7 @@ class HomePageChild2 extends StatelessWidget {
             onPressed: (){
               context.pushNamed(RoutePathConstants.fourthfavpage);
             },
-            child: const Text('fourth fav page'),
+            child: const Text('askpage'),
           ),
           Text('home1-2'),
         ],
