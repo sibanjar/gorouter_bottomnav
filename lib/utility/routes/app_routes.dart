@@ -13,6 +13,7 @@ import 'package:gorouter_bottomnav/favourite/favourite_page.dart';
 import 'package:gorouter_bottomnav/navbar.dart';
 import 'package:gorouter_bottomnav/search/search_page.dart';
 import 'package:gorouter_bottomnav/utility/routes/route_names.dart';
+import 'package:gorouter_bottomnav/utility/routes/route_oberserver.dart';
 import 'package:gorouter_bottomnav/wallet/wallet_page.dart';
 import '../../home/subhome/sub_home_child/sub_home1_2.dart';
 import '../../home/home_page.dart';
@@ -30,6 +31,7 @@ class AppRouter{
     GoRouter router = GoRouter(
       navigatorKey: _rootNavigatorKey,
       initialLocation: '/',
+      observers:  [RouterObserver()],
       routes: <RouteBase>[
         StatefulShellRoute.indexedStack(
           builder: (context, state, navigationShell) {
@@ -38,6 +40,7 @@ class AppRouter{
           branches:<StatefulShellBranch> [
             StatefulShellBranch(
               // navigatorKey: _homeNavigatorKey,
+                      observers:  [RouterObserver()],
                 routes: [
                   GoRoute(
                       path: '/',
@@ -187,7 +190,7 @@ class AppRouter{
                       },
                       routes: [
                         GoRoute(
-                          // parentNavigatorKey: _rootNavigatorKey,
+                          parentNavigatorKey: _rootNavigatorKey,
                             path: 'chart',
                             name: RoutePathConstants.chart,
                             builder: (context,state){

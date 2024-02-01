@@ -47,9 +47,11 @@ class AskBottomSheet extends StatelessWidget {
             AskShowDialog(
                 context, 'ask question.', '', cancelText: 'No',
                 confirmText: 'Yes').then((result) {
-              if(result !=null && result == true){context.goNamed(RoutePathConstants.home1);
+              if(result !=null && result == true){
+                Navigator.popUntil(context, (route) => route.settings.name == RoutePathConstants.home1);
               }else{
-                context.goNamed(RoutePathConstants.home);
+                Navigator.popUntil(context, (route) => route.settings.name == RoutePathConstants.home);
+                // context.pushNamed(RoutePathConstants.setting);
               }
 
             });
